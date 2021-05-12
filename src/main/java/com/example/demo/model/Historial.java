@@ -1,8 +1,5 @@
 package com.example.demo.model;
 
-import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,28 +14,9 @@ public class Historial {
     @GeneratedValue(strategy = GenerationType.IDENTITY)    
     private int id;
 
-    @Column(nullable = false, length = 20)
-    private String pasajero;
-
-    @Column(nullable = false, length = 2)
-    private int silla;
-
-    @Column(nullable = false)
-    private int vuelo;
-
-    @Column(nullable = false)
-    private Date fecha;
-
-    @Column(nullable = false)
-    private String hora;
-
     @OneToOne
-    @JoinColumn
-    private Compra compra;
-
-    @OneToOne
-    @JoinColumn
-    private Reserva reserva;
+    @JoinColumn(unique = true)
+    private DetalleSillaVuelo detalle_silla_vuelo;
 
     
 }

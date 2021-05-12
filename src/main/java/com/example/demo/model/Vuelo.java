@@ -19,7 +19,6 @@ public class Vuelo {
     @JoinColumn
     private Itinerario itinerario;
 
-
     @OneToOne
     @JoinColumn
     private Avion avion;
@@ -27,7 +26,7 @@ public class Vuelo {
     @Column
     private boolean cancelado;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 8)
     private int precio;
 
 }

@@ -3,14 +3,14 @@ package com.example.demo.model;
 import javax.persistence.*;
 
 @Entity
-public class Reserva {
-
+public class Factura {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)    
     private int id;
-    
-    @ManyToOne
-    @JoinColumn
-    private Pasajero pasajero;
+
+    @OneToOne
+    @JoinColumn(unique = true)
+    private DetalleSillaVuelo detalle_silla_vuelo;
 
 }
