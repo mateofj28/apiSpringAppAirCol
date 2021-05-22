@@ -1,11 +1,13 @@
 package com.example.demo.controller;
 
+
 import java.util.List;
 
-import com.example.demo.model.Pais;
-import com.example.demo.service.IPais;
+import com.example.demo.model.Ciudad;
+import com.example.demo.service.Iciudad;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,23 +15,26 @@ import org.springframework.web.bind.annotation.RestController;
 
 //@Controller cuando tenga el frontend no separado
 @RestController
-@RequestMapping("/api/pais")
-public class controlPais {
+@RequestMapping("/api/ciudad")
+@CrossOrigin(origins = "http://localhost:51094")    
+public class controlCiudad {
     
     @Autowired
-    private IPais restPais;
+    private Iciudad restCiudad;
 
     //@GetMapping()
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
-    public List<Pais> getPaices(){
-        return restPais.findAll();
+    public List<Ciudad> getCiudades(){
+        return restCiudad.findAll();
+    }
+
+    @RequestMapping(method = RequestMethod.POST, produces = "application/json")
+    public Ciudad saveCiudad(@RequestBody Ciudad ciudad){
+        return restCiudad.save(ciudad);
     }
 
     
-    @RequestMapping(method = RequestMethod.POST, produces = "application/json")
-    public Pais savePais(@RequestBody Pais pais){         
-        return restPais.save(pais);
-    }
+    
 
 
 }
