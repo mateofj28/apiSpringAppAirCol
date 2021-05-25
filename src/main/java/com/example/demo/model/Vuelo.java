@@ -24,7 +24,7 @@ public class Vuelo {
     private Avion avion;
 
     @Column
-    private boolean cancelado;
+    private boolean finalizado;
 
     @Column(nullable = false, length = 8)
     private int precio;
