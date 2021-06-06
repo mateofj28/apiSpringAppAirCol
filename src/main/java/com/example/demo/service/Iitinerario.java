@@ -5,6 +5,7 @@ package com.example.demo.service;
 import com.example.demo.model.Itinerario;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -19,6 +20,9 @@ public interface Iitinerario extends JpaRepository<Itinerario, Integer>{
      * En este caso, va a traer todos los itinerarios que contengan
      * dicho campo.
      */
+
+    @Query(value = "SELECT * FROM itinerario a WHERE a.id=?1", nativeQuery = true)
+    Itinerario findItinerarioById(int id);
 
 
 

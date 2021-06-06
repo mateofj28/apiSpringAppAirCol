@@ -29,4 +29,55 @@ public class Vuelo {
     @Column(nullable = false, length = 8)
     private int precio;
 
+    public Vuelo() {
+    }
+
+    public Vuelo(int id, Itinerario itinerario, Avion avion, boolean finalizado, int precio) {
+        this.id = id;
+        this.itinerario = itinerario;
+        this.avion = avion;
+        this.finalizado = finalizado;
+        this.precio = precio;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Itinerario getItinerario() {
+        return itinerario;
+    }
+
+    public void setItinerario(Itinerario itinerario) {
+        this.itinerario = itinerario;
+    }
+
+    public Avion getAvion() {
+        return avion;
+    }
+
+    public void setAvion(Avion avion) {
+        this.avion = avion;
+    }
+
+    public boolean isFinalizado() {
+        return finalizado;
+    }
+
+    public void setFinalizado(boolean finalizado) {
+        this.finalizado = finalizado;
+    }
+
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+
 }

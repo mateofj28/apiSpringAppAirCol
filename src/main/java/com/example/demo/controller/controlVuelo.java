@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import com.example.demo.model.Vuelo;
 import com.example.demo.service.Ivuelo;
 
@@ -19,10 +21,14 @@ public class controlVuelo {
     @Autowired
     private Ivuelo restVuelo;
 
-    @RequestMapping(value = "/save", method = RequestMethod.POST, produces = "application/json")
+    @RequestMapping(method = RequestMethod.POST, produces = "application/json")
     public Vuelo guardarVuelo(@RequestBody Vuelo vuelo){
         return restVuelo.save(vuelo);
     }
 
+    @RequestMapping(method = RequestMethod.GET, produces = "application/json")
+    public List<Vuelo> buscarVuelos(){
+        return restVuelo.findAll();
+    }
     
 }

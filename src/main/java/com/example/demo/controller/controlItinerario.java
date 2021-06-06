@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -25,6 +26,11 @@ public class controlItinerario {
     @GetMapping
     List<Itinerario> getItinerarios(){
         return restItinerario.findAll();
+    }
+
+    @RequestMapping(value = "/id", method = RequestMethod.GET, produces = "application/json")
+    public Itinerario buscarItinerario(@RequestParam(value = "id") int id){
+        return restItinerario.findItinerarioById(id);
     }
 
     @RequestMapping(method = RequestMethod.POST, produces = "application/json")
