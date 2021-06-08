@@ -17,4 +17,43 @@ public class Silla {
     @OneToOne
     @JoinColumn(nullable = false, unique = true)
     private ClaseSilla clase;
+
+    
+
+    public Silla() {
+    }
+
+
+
+    public Silla(int numero, ClaseSilla clase) {
+        this.numero = numero;
+        this.clase = clase;
+    }
+
+
+
+    public int getNumero() {
+        return numero;
+    }
+
+
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+
+
+    public ClaseSilla getClase() {
+        return clase;
+    }
+
+
+
+    public void setClase(ClaseSilla clase) {
+        this.clase = clase;
+    }
+
+    
+    
 }

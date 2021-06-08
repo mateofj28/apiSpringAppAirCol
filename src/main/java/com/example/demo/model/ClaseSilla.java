@@ -18,4 +18,41 @@ public class ClaseSilla {
 
     @Column(nullable = false)
     private int precio;
+
+    public ClaseSilla() {
+    }
+
+    public ClaseSilla(int id, String tipoSilla, int precio) {
+        this.id = id;
+        this.tipoSilla = tipoSilla;
+        this.precio = precio;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTipoSilla() {
+        return tipoSilla;
+    }
+
+    public void setTipoSilla(String tipoSilla) {
+        this.tipoSilla = tipoSilla;
+    }
+
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+
+    
+
+
 }
