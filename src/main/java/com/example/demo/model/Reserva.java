@@ -13,4 +13,29 @@ public class Reserva {
     @JoinColumn
     private Pasajero pasajero;
 
+    public Reserva() {
+    }
+
+    public Reserva(int id, Pasajero pasajero) {
+        this.id = id;
+        this.pasajero = pasajero;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Pasajero getPasajero() {
+        return pasajero;
+    }
+
+    public void setPasajero(Pasajero pasajero) {
+        this.pasajero = pasajero;
+    }
+
+    
 }
